@@ -1,0 +1,243 @@
+.blog-view-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.blog-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a0a0a0;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(255, 107, 0, 0.05);
+  color: #FAAD03;
+  border-color: rgba(255, 107, 0, 0.3);
+}
+
+.view-category-badge {
+  background: rgba(255, 107, 0, 0.1);
+  color: #FAAD03;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 12px;
+}
+
+.view-date {
+  color: #707070;
+  font-size: 0.85rem;
+}
+
+.blog-view-content-card {
+  background: var(--theme-elevation-50);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.view-image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.view-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.view-content-card:hover .view-hero-image {
+  transform: scale(1.02);
+}
+
+.view-body-padding {
+  padding: 2.5rem 3.5rem;
+}
+
+.view-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.view-author-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.view-author-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FAAD03, #FFC133);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+.view-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-author-name {
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.view-read-time {
+  color: #707070;
+  font-size: 0.75rem;
+}
+
+.view-excerpt {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #FAAD03;
+}
+
+.view-main-content {
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.view-paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.view-heading-h1, .view-heading-h2, .view-heading-h3 {
+  color: white;
+  margin: 2.5rem 0 1rem;
+  font-weight: 700;
+}
+
+.view-heading-h1 { font-size: 2rem; }
+.view-heading-h2 { font-size: 1.75rem; }
+.view-heading-h3 { font-size: 1.5rem; }
+
+.view-list {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.view-list li {
+  margin-bottom: 0.5rem;
+}
+
+
+.rich-text-placeholder {
+  background: rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,0.1);
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.blog-view-loading, .blog-view-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #FAAD03;
+  font-weight: 600;
+}
+
+.view-video-section {
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.view-video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.view-video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.view-external-url-display {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.url-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #707070;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.url-value {
+  color: #FAAD03;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+  transition: color 0.2s;
+}
+
+.url-value:hover {
+  color: #FFC133;
+  text-decoration: underline;
+}

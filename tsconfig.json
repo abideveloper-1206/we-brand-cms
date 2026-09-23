@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    // "baseUrl": ".",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@payload-config": [
+        "./src/payload.config.ts"
+      ]
+    },
+    "target": "ES2022"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+, "src/collections/Blog.js"  ],
+  "exclude": [
+    "node_modules",
+    "src/fix-ar-images.ts",
+    "src/fix-ar-cats.ts",
+    "src/fix-faqs-db.ts",
+    "src/fix-products-db.ts",
+    "src/force-save-members.ts",
+    "src/get-en-data.ts",
+    "src/import-products.ts",
+    "src/mongo-fetch.ts",
+    "src/oplog.ts",
+    "src/rebuild-lost.ts",
+    "src/restore-data.ts",
+    "src/update-ar-faq.ts",
+    "src/update-ar.ts",
+    "src/update-contact-dynamic.ts",
+    "src/update-members-content-from-screenshots.ts",
+    "src/update-products-full.ts",
+    "src/app/api/seed-avocado/route.ts",
+    "src/app/api/seed-categories-ar/route.ts",
+    "seed_logos.ts"
+  ]
+}

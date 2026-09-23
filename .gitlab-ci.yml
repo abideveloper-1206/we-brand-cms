@@ -1,0 +1,45 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  IMAGE_LATEST: $CI_REGISTRY_IMAGE:latest
+
+build_image:
+  stage: build
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+  only:
+    - dev
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t $IMAGE_TAG -t $IMAGE_LATEST .
+    - docker push $IMAGE_TAG
+    - docker push $IMAGE_LATEST
+
+deploy:
+  stage: deploy
+  image: ubuntu:22.04
+  only:
+    - dev
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SERVER_SSH_PRIVATE_KEY" | tr -d '\r' > /tmp/deploy_key
+    - chmod 600 /tmp/deploy_key
+    - ssh-add /tmp/deploy_key
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - |
+      ssh $SERVER_USER@$SERVER_IP "
+        cd /opt/barkat &&
+        export CI_REGISTRY_IMAGE_CMS=${CI_REGISTRY_IMAGE}:latest &&
+        docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY &&
+        docker compose -f docker-compose.prod.yml pull cms &&
+        docker compose -f docker-compose.prod.yml up -d cms
+      "

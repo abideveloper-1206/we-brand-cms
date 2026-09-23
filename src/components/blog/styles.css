@@ -1,0 +1,125 @@
+:root {
+  --app-accent: #ff6b6b;
+  --app-accent-bg: #fff0f0;
+  --app-bg: #ffffff;
+  --app-border: #f0f0f0;
+  --app-text: #444444;
+  --app-text-dim: #888888;
+  --app-table-header: #f8f9fa;
+}
+
+
+.header-left {
+  display: flex;
+  padding: 1.5rem 1rem 0;
+}
+
+.blog-tabs {
+  display: none;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.blog-tab {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--app-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.blog-tab.active {
+  color: var(--app-accent);
+  background: var(--app-accent-bg);
+  border-radius: 6px 6px 0 0;
+}
+
+.blog-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--app-accent);
+}
+
+/* Table Cells Matching Reference */
+.blog-status-badge {
+  padding: 0.25rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  background: var(--app-accent-bg);
+  color: var(--app-accent);
+}
+
+.blog-cell-actions {
+  /* Handled by admin-layout.css */
+}
+
+.edit-action-btn, .delete-action-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.1s ease;
+}
+
+.edit-action-btn {
+  color: #3b82f6;
+}
+
+.view-action-btn {
+    color: #FAAD03;
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+.delete-action-btn {
+  color: #ef4444; /* Red for trash */
+}
+
+.edit-action-btn:hover, .delete-action-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Image Thumbnail matching the clean look */
+.blog-image-cell {
+     width: 25px;
+    height: 22px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+}
+
+.blog-table-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-fallback-icon {
+  width: 100%;
+  height: 100%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+}
+
+/* Sidebar Brand Lockup Hide from header as it's not in the reference */
+.brand-lockup {
+  display: none; 
+}

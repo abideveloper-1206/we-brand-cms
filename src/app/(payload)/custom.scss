@@ -1,0 +1,630 @@
+/* ========================================================
+   INNOVATIVE PREMIUM UI FOR PAYLOAD CMS
+   Theme: Navy Blue (matches sidebar #0f2f63)
+======================================================== */
+
+:root, html[data-theme='light'] {
+  --theme-bg: #ffffff !important; 
+  --theme-elevation-0: #ffffff !important;
+  --theme-elevation-50: #f8f9ff !important;
+  --theme-elevation-100: #eef0f8 !important;
+  --theme-brand-primary: #1e40af !important; 
+}
+
+/* --- 1. Global Background --- */
+body, .template-default {
+  background-color: #ffffff !important;
+}
+.nav {
+  background-color: #0f2f63 !important; 
+}
+
+/* --- 2. Search Bar & Filters --- */
+.list-controls {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 0rem !important;
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: center !important;
+}
+
+.search-filter {
+  flex-grow: 1 !important;
+}
+
+.search-filter input,
+.search-filter__input {
+  border: none !important;
+  border-radius: 30px !important;
+  color: #1e3a8a !important;
+  padding: 0.8rem 1rem 0.8rem 2.8rem !important;
+  width: 100% !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Columns & Filters Buttons */
+.list-controls button,
+.list-controls .btn {
+  background-color: #0f2f63 !important; 
+  color: #ffffff !important;
+  border-radius: 30px !important;
+  border: none !important;
+  padding: 0.3rem 1.6rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(15, 47, 99, 0.25) !important;
+  transition: all 0.2s ease !important;
+}
+
+.list-controls button:hover,
+.list-controls .btn:hover {
+  background-color: #1e40af !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3) !important;
+}
+
+.list-controls button *,
+.list-controls .btn * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+
+/* --- 3. Innovative Table UI --- */
+/* NOTE: no overflow:hidden here — it clips filter dropdowns */
+.table, table {
+  background-color: #ffffff !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+}
+
+/* ── Lock thead (header row) to ALWAYS stay navy — never override on hover ── */
+.table thead tr,
+thead tr {
+  background-color: #0f2f63 !important;
+}
+
+.table thead tr:hover,
+thead tr:hover {
+  background-color: #0f2f63 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.table-header .cell,
+.table thead th, 
+thead th {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px !important;
+  padding: 1.2rem 1.5rem !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.table-header .cell *,
+.table thead th *, 
+thead th * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Rows — ONLY tbody rows get hover effect, never thead */
+.table tbody tr,
+tbody tr {
+  border-bottom: 1px solid #eef0f8 !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+  background-color: #ffffff !important;
+}
+
+.table tbody tr:hover,
+tbody tr:hover {
+  background-color: #eef3ff !important;
+  box-shadow: 0 4px 15px rgba(15, 47, 99, 0.07) !important;
+}
+
+.table tbody td,
+.row .cell,
+tbody td {
+  padding: 1.2rem 1.5rem !important;
+  color: #1e3a8a !important;
+  font-weight: 500 !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* --- Columns pills (active column toggles) --- */
+.list-controls .pill,
+.columns-selector__pill,
+[class*="column-selector"] [class*="pill"],
+[class*="columns"] button {
+  background-color: #0f2f63 !important;
+  color: #ffffff !important;
+  border-color: #0f2f63 !important;
+}
+
+/* --- Filter section (Add Filter button & filter rows) ---
+   IMPORTANT: don't use overflow:hidden here — it collapses the panel
+*/
+.filters,
+.where-builder,
+[class*="where-builder"],
+[class*="filters__"] {
+  // background-color: #f8f9ff !important;
+  // border-radius: 12px !important;
+  // border: 1px solid #dde3f5 !important;
+  // overflow: visible !important;
+  margin-bottom: 1rem !important;
+}
+
+/* "No filters set" text */
+[class*="no-results"],
+[class*="no-filter"] {
+  color: #1e3a8a !important;
+}
+
+/* Add Filter button  */
+[class*="add-filter"],
+.where-builder__add-button,
+button[class*="add"] {
+  background-color: #0f2f63 !important;
+  border-color: #0f2f63 !important;
+  color: #ffffff !important;
+}
+
+[class*="add-filter"]:hover,
+.where-builder__add-button:hover {
+  background-color: #1e40af !important;
+}
+
+/* Filter row dropdowns */
+[class*="condition-field"],
+[class*="condition-operator"],
+[class*="relation-to"],
+.condition__field,
+.condition__operator {
+  border-color: #c7d2f0 !important;
+  color: #1e3a8a !important;
+  border-radius: 8px !important;
+}
+
+/* Or button */
+[class*="add-or"],
+.where-builder__or-button {
+  background-color: #0f2f63 !important;
+  border-color: #0f2f63 !important;
+  color: #ffffff !important;
+  border-radius: 20px !important;
+}
+
+/* Remove (X) & Add (+) icon buttons in filter rows */
+[class*="remove-condition"],
+[class*="add-condition"],
+.where-builder [class*="btn"] {
+  border-color: #c7d2f0 !important;
+  // color: #1e3a8a !important;
+}
+
+
+/* --- 4. Language Switcher (Globe Icon + Text) --- */
+
+/* Remove any background/border from localizer container */
+.localizer, [class*="localizer"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide the "Language: " prefix and the chevron arrow */
+.localizer-button__label,
+.localizer-button__chevron {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Ensure the dynamic "English" / "العربية" text is visible */
+.localizer-button__current {
+  display: block !important;
+  opacity: 1 !important;
+  color: #FAAD03 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  transition: color 0.2s ease !important;
+}
+
+/* Make the button a clean, simple layout with no borders */
+.localizer-button {
+  background-color: transparent !important; 
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  padding: 4px 8px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Globe Icon via SVG background */
+.localizer-button::before {
+  content: '';
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FAAD03%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%222%22%20y1%3D%2212%22%20x2%3D%2222%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cpath%20d%3D%22M12%202a15.3%2015.3%200%200%201%204%2010%2015.3%2015.3%200%200%201-4%2010%2015.3%2015.3%200%200%201-4-10%2015.3%2015.3%200%200%201%204-10z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Hover State */
+.localizer-button:hover {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.localizer-button:hover .localizer-button__current {
+  color: #FAAD03 !important;
+}
+
+.localizer-button:hover::before {
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FAAD03%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%222%22%20y1%3D%2212%22%20x2%3D%2222%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cpath%20d%3D%22M12%202a15.3%2015.3%200%200%201%204%2010%2015.3%2015.3%200%200%201-4%2010%2015.3%2015.3%200%200%201-4-10%2015.3%2015.3%200%200%201%204-10z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+}
+
+/* Clean up the dropdown popup to match the innovative feel */
+.popup__content, .localizer [class*="menu"], .localizer [class*="popup"] {
+  border-radius: 12px !important;
+  padding: 8px !important;
+  margin-top: 3px !important;
+}
+
+/* Hide the caret arrow */
+.popup__caret {
+  display: none !important;
+}
+
+.popup-button-list {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 6px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.popup-button-list__button {
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  background: #eef0f8 !important;
+  color: #0f2f63 !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  border: none !important;
+  white-space: nowrap !important;
+  flex: 1 !important;
+  text-align: center !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.popup-button-list__button:hover {
+  background: #dde3f5 !important;
+}
+
+.popup-button-list__button--selected {
+  background: #0f2f63 !important;
+  color: #ffffff !important;
+}
+
+.localizer [class*="option"] {
+  display: none !important;
+}
+
+/* --- 5. Clean Back Button --- */
+.step-nav button.step-nav__back {
+  background-color: #FFFFFF !important;
+  border: none !important;
+  color: #0f2f63 !important; 
+  border-radius: 50% !important; 
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.step-nav button.step-nav__back:hover {
+  background-color: #0f2f63 !important; 
+  color: #FFFFFF !important; 
+  transform: translateX(-4px) !important;
+}
+
+.step-nav button.step-nav__back svg {
+  fill: currentColor !important;
+}
+.popup__content {
+  z-index: 9999 !important;
+}
+
+/* ── Hide all scrollbars in admin UI but keep scrolling functional ── */
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+* {
+  scrollbar-width: none !important;   /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+/* ========================================================
+   CUSTOM UPLOAD FIELD & DROPZONE STYLING
+======================================================== */
+.dropzone,
+[class*="dropzone"] {
+  border: 2px dashed #c7d2f0 !important;
+  background-color: #f8f9ff !important;
+  border-radius: 16px !important;
+  padding: 2rem 1.5rem !important;
+  transition: all 0.25s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: #0f2f63 !important;
+  background-color: #eef3ff !important;
+}
+
+/* Style the buttons inside upload dropzone */
+.upload__dropzoneContent__buttons,
+[class*="dropzoneContent__buttons"] {
+  display: flex !important;
+  gap: 12px !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+}
+
+.upload__dropzoneContent__buttons .btn,
+[class*="dropzoneContent__buttons"] .btn,
+.upload-relationship-details__actions .btn {
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1.8rem !important;
+  font-size: 0.85rem !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(15, 47, 99, 0.15) !important;
+}
+
+/* Primary "Create New" or "Upload" button */
+.upload__dropzoneContent__buttons .btn:first-child,
+[class*="dropzoneContent__buttons"] .btn:first-child {
+  background-color: #0f2f63 !important;
+  color: #ffffff !important;
+}
+.upload__dropzoneContent__buttons .btn:first-child:hover,
+[class*="dropzoneContent__buttons"] .btn:first-child:hover {
+  background-color: #1e40af !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary "Choose from existing" button */
+.upload__dropzoneContent__buttons .btn:last-child,
+[class*="dropzoneContent__buttons"] .btn:last-child {
+  background-color: #2563c9 !important;
+  color: #ffffff !important;
+}
+.upload__dropzoneContent__buttons .btn:last-child:hover,
+[class*="dropzoneContent__buttons"] .btn:last-child:hover {
+  background-color: #1d4ed8 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Drag and Drop Text */
+.upload__dragAndDropText,
+[class*="dragAndDropText"] {
+  font-size: 0.85rem !important;
+  color: #4b5563 !important;
+  font-weight: 500 !important;
+}
+
+/* Or separator text */
+.upload__dropzoneContent__orText,
+[class*="dropzoneContent__orText"] {
+  font-size: 0.85rem !important;
+  color: #9ca3af !important;
+}
+
+/* ========================================================
+   PREMIUM CUSTOM DRAWER / MEDIA POPUP STYLING
+======================================================== */
+.drawer,
+[class*="drawer"] {
+  z-index: 9999 !important;
+}
+
+.drawer__content,
+[class*="drawer__content"] {
+  background-color: #ffffff !important;
+  border-left: 1px solid #dde3f5 !important;
+  box-shadow: -10px 0 40px rgba(15, 47, 99, 0.1) !important;
+}
+
+.drawer__header,
+[class*="drawer__header"] {
+  background-color: #f8f9ff !important;
+  border-bottom: 1px solid #dde3f5 !important;
+  padding: 1.5rem !important;
+}
+
+.drawer__header h2,
+[class*="drawer__header"] h2 {
+  color: #0f2f63 !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+}
+
+/* Close button inside drawer */
+.drawer__header__close,
+[class*="drawer__header__close"] {
+  color: #0f2f63 !important;
+  transition: transform 0.2s ease !important;
+}
+.drawer__header__close:hover,
+[class*="drawer__header__close"]:hover {
+  transform: rotate(90deg) !important;
+}
+
+/* Media thumbnails in the selection grid */
+.media-grid,
+[class*="media-grid"] {
+  gap: 16px !important;
+  padding: 1.5rem !important;
+}
+
+.media-card,
+[class*="media-card"] {
+  border-radius: 12px !important;
+  border: 1px solid #dde3f5 !important;
+  overflow: hidden !important;
+  transition: all 0.2s ease !important;
+}
+
+.media-card:hover,
+[class*="media-card"]:hover {
+  border-color: #0f2f63 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(15, 47, 99, 0.1) !important;
+}
+
+/* ========================================================
+   CUSTOM PREMIUM TOAST & NOTIFICATION STYLING (TOP-RIGHT)
+======================================================== */
+[data-sonner-toaster],
+.toaster,
+ol[data-sonner-toaster] {
+  top: 24px !important;
+  right: 24px !important;
+  bottom: auto !important;
+  left: auto !important;
+  position: fixed !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+[data-sonner-toast],
+li.toast,
+div.toast {
+  background: #ffffff !important;
+  color: #0f2f63 !important;
+  border: 1px solid rgba(15, 47, 99, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 45px rgba(15, 47, 99, 0.12) !important;
+  padding: 16px 24px !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 550 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  position: relative !important;
+  min-width: 320px !important;
+  max-width: 420px !important;
+  pointer-events: auto !important;
+  animation: toastSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+/* Adjust layout on login page */
+body:has(.login__form) [data-sonner-toaster],
+body:has(.login__form) .toaster,
+body:has(.login__form) ol[data-sonner-toaster] {
+  top: 24px !important;
+  right: 24px !important;
+  bottom: auto !important;
+  left: auto !important;
+  position: fixed !important;
+}
+
+/* Error Alert Specifics (e.g. Invalid credentials) */
+[data-sonner-toast][data-type="error"],
+li.toast--error,
+div.toast--error {
+  background: #fff5f5 !important;
+  color: #c53030 !important;
+  border: 1px solid rgba(229, 62, 62, 0.2) !important;
+  border-left: 5px solid #e53e3e !important;
+}
+
+/* Success Alert Specifics */
+[data-sonner-toast][data-type="success"],
+li.toast--success,
+div.toast--success {
+  background: #f0fff4 !important;
+  color: #2f855a !important;
+  border: 1px solid rgba(72, 187, 120, 0.2) !important;
+  border-left: 5px solid #48bb78 !important;
+}
+
+/* Close button inside toast */
+[data-sonner-toast] [data-close-button],
+li.toast button[class*="close"],
+div.toast button[class*="close"] {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+  color: currentColor !important;
+  border-radius: 50% !important;
+  width: 22px !important;
+  height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 12px !important;
+  left: auto !important; /* Override Sonner inline left positioning */
+  transform: translateY(-50%) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  opacity: 0.7 !important;
+  z-index: 99 !important;
+}
+
+[data-sonner-toast] [data-close-button]:hover,
+li.toast button[class*="close"]:hover,
+div.toast button[class*="close"]:hover {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

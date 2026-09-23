@@ -1,0 +1,141 @@
+{
+  "home-story-favorites": {
+    "_id": "6a2a8b29171cf5a69a0bdc5c",
+    "createdAt": "2026-06-11T10:17:13.825Z",
+    "updatedAt": "2026-06-11T10:55:43.475Z",
+    "storyTagline": {
+      "en": "Our Story",
+      "ar": "Our Story"
+    },
+    "storyTitle": {
+      "en": "Honest Ingredients. Real Good Ness",
+      "ar": "Honest Ingredients. Real Good Ness"
+    },
+    "storyButtonText": {
+      "en": "Learn More",
+      "ar": "Learn More"
+    },
+    "storyButtonLink": "/about",
+    "favoritesHeading": {
+      "en": "Shop Our <br/>\nFavorites",
+      "ar": "Shop Our Favorites"
+    },
+    "viewAllText": {
+      "en": "View All Products",
+      "ar": "View All Products"
+    },
+    "viewAllLink": "/products",
+    "__v": 0,
+    "favoriteCards": [
+      {
+        "cardImage": "6a2a9187171cf5a69a0be239",
+        "cardTitle": {
+          "en": "Avocado Smoothie"
+        },
+        "cardSubtitle": {
+          "en": "100% Natural",
+          "ar": "100% Natural"
+        },
+        "backgroundColor": "#8AA631",
+        "buttonLink": "/products",
+        "id": "6a2a90f9d7481007aaba464e"
+      },
+      {
+        "cardImage": "6a2a922d171cf5a69a0be2fe",
+        "cardTitle": {
+          "en": "Mango Juice"
+        },
+        "cardSubtitle": {
+          "en": "100% Natural",
+          "ar": "100% Natural"
+        },
+        "backgroundColor": "#FAAD03",
+        "buttonLink": "/products",
+        "id": "6a2a91c3d7481007aaba4650"
+      },
+      {
+        "cardImage": "6a2a92b8171cf5a69a0be336",
+        "cardTitle": {
+          "en": "Avocado Smoothie"
+        },
+        "cardSubtitle": {
+          "en": "100% Natural",
+          "ar": "100% Natural"
+        },
+        "backgroundColor": "#8AA631",
+        "buttonLink": "/products",
+        "id": "6a2a9235d7481007aaba4652"
+      }
+    ],
+    "storyDescription": {
+      "en": "Saudi Arabia is blessed with extraordinary agricultural heritage from the date palms of Al-Ahsa to the citrus groves of Taif. ness partners directly with local farmers to bring the very best of this land into every bottle, celebrating the Kingdom's natural abundance with every sip."
+    },
+    "storyImage": "6a2a92eb171cf5a69a0be377"
+  },
+  "home-products-partnerships": {
+    "_id": "6a2a97f3171cf5a69a0be6f7",
+    "createdAt": "2026-06-11T11:11:47.358Z",
+    "updatedAt": "2026-06-12T05:02:00.452Z",
+    "productsHeading": "Goodness That Fits Your Day",
+    "partnershipHeading": "Partnerships & </b> Wholesale",
+    "primaryButtonText": "Talk To Sales",
+    "secondaryButtonText": "Partner With Us",
+    "__v": 0,
+    "galleryCards": [
+      {
+        "label": "Cafés & Restaurants",
+        "image": "6a2a9b33171cf5a69a0be821",
+        "id": "6a2a9b01992186ea96949d54"
+      },
+      {
+        "label": "Retail and Stores",
+        "image": "6a2aa9de171cf5a69a0beb9d",
+        "id": "6a2aa9bb992186ea96949d5c"
+      },
+      {
+        "label": "Private Label",
+        "image": "6a2aaa16171cf5a69a0bebe0",
+        "id": "6a2aa9f8992186ea96949d5e"
+      },
+      {
+        "label": "Hospitality",
+        "image": "6a2aaa42171cf5a69a0bec24",
+        "id": "6a2aaa1c992186ea96949d60"
+      }
+    ],
+    "products": [
+      {
+        "title": "Morning Reset",
+        "subtitle": "Kickstart Your Day With Energy",
+        "taglineIcon": "6a2a9ab0171cf5a69a0be7d4",
+        "image": "6a2a9a81171cf5a69a0be7a8",
+        "buttonText": "Explore",
+        "id": "6a2a983e992186ea96949d52"
+      },
+      {
+        "title": "Midday Lightness",
+        "subtitle": "Stay Light And Focused",
+        "taglineIcon": "6a2aa933171cf5a69a0bea96",
+        "image": "6a2aa94b171cf5a69a0beaba",
+        "buttonText": "Explore",
+        "id": "6a2aa6fc992186ea96949d56"
+      },
+      {
+        "title": " Evening Balance ",
+        "subtitle": "Unwind And Calm Down",
+        "taglineIcon": "6a2aa963171cf5a69a0beae5",
+        "image": "6a2aa97a171cf5a69a0beb0b",
+        "buttonText": "Explore",
+        "id": "6a2aa732992186ea96949d58"
+      },
+      {
+        "title": " ON THE GO FUEL",
+        "subtitle": "Fuel up your body anytime",
+        "taglineIcon": "6a2aa999171cf5a69a0beb36",
+        "image": "6a2aa9ab171cf5a69a0beb5a",
+        "buttonText": "Explore",
+        "id": "6a2aa74c992186ea96949d5a"
+      }
+    ]
+  }
+}

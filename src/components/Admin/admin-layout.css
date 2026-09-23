@@ -1,0 +1,2508 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap');
+
+:root {
+  --brand-green: #2563c9;
+  --orange-primary: #0a0a0a;
+  --orange-gradient: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --text-active: #ffffff;
+  
+  /* Force Payload variables to stretch */
+  --app-max-width: 100% !important;
+  
+  /* Modern Accents and Fonts */
+  --font-body: 'Onest', sans-serif !important;
+  --font-heading: 'Onest', sans-serif !important;
+
+  /* Override ALL Payload color tokens with brand blue */
+  --theme-success-400: #2563c9 !important;
+  --theme-success-500: #2563c9 !important;
+  --theme-success-600: #1d4ed8 !important;
+  --theme-primary-400: #2563c9 !important;
+  --theme-primary-500: #2563c9 !important;
+  --theme-primary-600: #1d4ed8 !important;
+  --theme-brand-400: #2563c9 !important;
+  --theme-brand-500: #2563c9 !important;
+  --theme-brand-600: #1d4ed8 !important;
+}
+
+body, * {
+  font-family: var(--font-body);
+}
+
+/* === FORCE ALL GREEN → BRAND BLUE in Payload Admin === */
+
+/* ── Row action pills: Move Up/Down, Add Below, Duplicate, Copy Row, Paste Row, Remove ── */
+/* Payload uses .pill--style-success for these buttons */
+.pill--style-success {
+  background: #2563c9 !important;
+  color: #ffffff !important;
+  transition: background 0.18s ease, transform 0.12s ease !important;
+}
+.pill--style-success.pill--has-action:hover,
+.pill--style-success.pill--has-action:active {
+  background: #1d4ed8 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+.pill--style-success.pill--has-action:active {
+  transform: translateY(0) !important;
+  background: #1e40af !important;
+}
+/* Override pill SVG icons inside success pills to white */
+.pill--style-success svg .stroke,
+.pill--style-success svg path,
+.pill--style-success svg line,
+.pill--style-success svg polyline {
+  stroke: #ffffff !important;
+}
+.pill--style-success svg .fill,
+.pill--style-success svg circle {
+  fill: #ffffff !important;
+}
+
+/* Override ALL Payload success/primary/brand CSS variables to blue */
+html, :root, [data-theme], body, html[data-theme="light"], html[data-theme="dark"] {
+  --color-success-50: #eff6ff !important;
+  --color-success-100: #dbeafe !important;
+  --color-success-150: #bfdbfe !important;
+  --color-success-200: #93c5fd !important;
+  --color-success-250: #60a5fa !important;
+  --color-success-300: #3b82f6 !important;
+  --color-success-350: #2563c9 !important;
+  --color-success-400: #2563c9 !important;
+  --color-success-450: #1d4ed8 !important;
+  --color-success-500: #1d4ed8 !important;
+  --color-success-550: #1e40af !important;
+  --color-success-600: #1e40af !important;
+  --color-success-650: #1e3a8a !important;
+  --color-success-700: #1e3a8a !important;
+  --color-success-750: #172554 !important;
+  --color-success-800: #172554 !important;
+  --color-success-850: #172554 !important;
+  --color-success-900: #0f172a !important;
+  --color-success-950: #020617 !important;
+
+  --theme-success-50: var(--color-success-50) !important;
+  --theme-success-100: var(--color-success-100) !important;
+  --theme-success-150: var(--color-success-150) !important;
+  --theme-success-200: var(--color-success-200) !important;
+  --theme-success-250: var(--color-success-250) !important;
+  --theme-success-300: var(--color-success-300) !important;
+  --theme-success-350: var(--color-success-350) !important;
+  --theme-success-400: var(--color-success-400) !important;
+  --theme-success-450: var(--color-success-450) !important;
+  --theme-success-500: var(--color-success-500) !important;
+  --theme-success-550: var(--color-success-550) !important;
+  --theme-success-600: var(--color-success-600) !important;
+  --theme-success-700: var(--color-success-700) !important;
+  --theme-success-800: var(--color-success-800) !important;
+  --theme-success-900: var(--color-success-900) !important;
+
+  --theme-primary-400: #2563c9 !important;
+  --theme-primary-500: #2563c9 !important;
+  --theme-primary-600: #1d4ed8 !important;
+  --theme-brand-400: #2563c9 !important;
+  --theme-brand-500: #2563c9 !important;
+  --theme-brand-600: #1d4ed8 !important;
+}
+
+/* ── ALL Payload pill buttons (row actions: Move Up/Down, Add Below, Duplicate, Copy Row, Paste Row, Remove) ── */
+/* These use .pill base class — target broadly */
+.pill {
+  color: #2563c9 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease !important;
+  cursor: pointer !important;
+}
+.pill.pill--has-action:hover,
+.pill--has-action:hover {
+  background: #2563c9 !important;
+  color: #ffffff !important;
+  border-color: #2563c9 !important;
+}
+.pill.pill--has-action:active,
+.pill--has-action:active {
+  background: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+/* SVG icons in pills - blue by default, white on hover */
+.pill svg path,
+.pill svg line,
+.pill svg polyline,
+.pill svg circle,
+.pill svg rect {
+  stroke: #2563c9 !important;
+  fill: none !important;
+}
+.pill--has-action:hover svg path,
+.pill--has-action:hover svg line,
+.pill--has-action:hover svg polyline,
+.pill--has-action:hover svg circle,
+.pill--has-action:hover svg rect {
+  stroke: #ffffff !important;
+}
+
+/* Also override pill--style-success (just in case Payload uses it) */
+.pill--style-success {
+  color: #2563c9 !important;
+  background: transparent !important;
+}
+.pill--style-success.pill--has-action:hover {
+  background: #2563c9 !important;
+  color: #ffffff !important;
+}
+
+/* ── Save Document / Primary CTA buttons ── */
+.btn--style-primary,
+[class*="btn--style-primary"] {
+  background-color: #2563c9 !important;
+  border-color: #2563c9 !important;
+  color: #fff !important;
+  transition: background 0.18s ease !important;
+}
+.btn--style-primary:hover,
+[class*="btn--style-primary"]:hover {
+  background-color: #1d4ed8 !important;
+}
+.btn--style-primary:active {
+  background-color: #1e40af !important;
+}
+
+/* ── "..." popup/dropdown menu ── */
+[class*="popup__scroll-container"],
+[class*="popup__list"] {
+  /* background: #ffffff !important; */
+  /* border: 1px solid #e5e7eb !important; */
+  border-radius: 8px !important;
+  /* box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important; */
+}
+[class*="popup__list-item"],
+[class*="popup-btn"] {
+  color: #1e293b !important;
+  transition: background 0.15s ease !important;
+}
+[class*="popup__list-item"]:hover,
+[class*="popup-btn"]:hover {
+  background: #eff6ff !important;
+  color: #2563c9 !important;
+}
+
+/* Login Screen Styles */
+.custom-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/login-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: var(--font-body);
+}
+
+.login-box {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-box h1 {
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.login-box .payload-logo {
+  margin-bottom: 2rem;
+}
+
+
+/* Header & Sidebar */
+/* Hide the entire custom header */
+.custom-header {
+  display: none !important;
+}
+
+/* Floating Back Button — left side of header */
+.floating-back-btn {
+  position: fixed !important;
+  top: 1.15rem !important;
+  left: 300px !important;
+  z-index: 2000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 10px !important;
+  border: 1px solid #2563C9 !important;
+  background: #ffffff !important;
+  color: #2563C9 !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.floating-back-btn:hover {
+  background: var(--orange-primary) !important;
+  color: white !important;
+  border-color: var(--orange-primary) !important;
+  transform: translateX(-2px) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 201, 0.3) !important;
+}
+
+.floating-back-btn:active {
+  transform: translateX(-1px) scale(0.95) !important;
+}
+
+/* Floating edit toggle positioned under the header at top right */
+.floating-edit-toggle {
+  position: fixed !important;
+  top:95px !important;
+  bottom: auto !important;
+  right: 3rem !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  float: right;
+  gap: 8px !important;
+}
+
+
+.custom-sidebar {
+  border-right: 1px solid var(--glass-border);
+  height: 100vh;
+  width: 260px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  /* Hide scrollbar but allow scroll inside .sidebar-scroll-area */
+  overflow: hidden !important;
+}
+
+/* Hide scrollbar on sidebar scroll area (all browsers) */
+.sidebar-scroll-area {
+  scrollbar-width: none !important;       /* Firefox */
+  -ms-overflow-style: none !important;    /* IE/Edge */
+}
+.sidebar-scroll-area::-webkit-scrollbar {
+  display: none !important;               /* Chrome/Safari */
+}
+
+.sidebar-item {
+  padding: 0.75rem 1.25rem;
+  color: #a0a0a0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  margin: 4px 12px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.sidebar-item:hover {
+  background: rgba(37, 99, 201, 0.1);
+  color: var(--orange-primary);
+}
+
+.sidebar-item.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-left: 3px solid white;
+}
+
+/* Fix Payload 3.x Layout Content Offset */
+.template-default__wrap {
+  margin-left: 270px !important;
+  width: calc(100vw - 270px) !important;
+  max-width: calc(100vw - 270px) !important;
+  background: var(--theme-elevation-0) !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+.template-default__content {
+  padding: 2rem;
+  background: transparent;
+  max-width: none !important;
+}
+
+/* Allow lists and forms to stretch without forcing width 100% on everything */
+.collection-list,
+.collection-edit,
+.payload-main,
+.gutter {
+  max-width: none !important;
+}
+
+/* Ensure Payload's native grid and flex layouts work by not applying blanket width overrides. 
+   We only override max-width variables via :root. */
+
+/* Hide Payload default header logos and icons that show up in breadcrumb area */
+.app-header__logo,
+.step-nav__icon,
+.step-nav__logo,
+.nav__brand,
+.payload-logo,
+.graphics-logo,
+.step-nav img,
+.step-nav svg,
+.step-nav picture,
+.step-nav .avatar,
+header[class*="header"] img,
+header[class*="header"] svg {
+  display: none !important;
+}
+.step-nav  {
+    margin-left: 50px !important;
+}
+
+/* Fix for the custom blog list header */
+.blog-list-header-actions {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+}
+
+.list-header__title-and-actions{
+  display: flex;
+  justify-content: space-between;
+  /* display: none; */
+}
+.btn {
+  padding: 4px 20px;
+  border-radius: 20px;
+  background-color: var(--brand-green) !important;
+  color: white;
+  border: none;
+  cursor: pointer;
+  /* visibility: hidden; */
+   visibility: visible !important;
+  transition: all 0.3s ease;
+}
+.btn.array-field__add-row,
+.btn.array-field__add-row .btn__label,
+.btn.array-field__add-row .btn__icon,
+.btn.array-field__add-row svg {
+    color: white !important;
+    border-color: white !important;
+}
+
+.array-field__add-row .btn__icon,
+.array-field__add-row .btn__icon svg,
+.array-field__add-row .btn__icon svg path {
+    /* color: #fff !important; */
+    /* fill: #fff !important; */
+    /* stroke: #fff !important; */
+}
+
+.banner--type-error{
+    color: var(--theme-error-600);
+    background: var(--theme-error-100);
+    display:none !important;
+}
+
+.btn:hover {
+  background-color: #0f2f63;   /* deep blue */ 
+  transform: translateY(-3px); /* lift effect */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.doc-header__title {
+  display: none;
+}
+
+.app-header__content {
+  background-color: var(--theme-elevation-0) !important;
+  padding: 35px 0px;
+  color: var(--theme-text) !important;
+  border-bottom: 1px solid var(--theme-elevation-100) !important;
+}
+
+.collection-list, .collection-edit, .payload-main, .gutter {
+margin-top: 1px;
+}
+
+.doc-header:after {
+  display: none;
+}
+
+/* Hide Edit and API buttons ONLY in main document view — scope to template content, NOT drawers */
+.template-default__content .doc-header__actions,
+.template-default__content .doc-header__edit,
+.template-default__content .doc-header__api,
+.template-default__content .doc-controls__edit,
+.template-default__content .doc-controls__api,
+.template-default__content .doc-controls .btn--style-secondary,
+.template-default__content .doc-header .btn--style-secondary,
+.template-default__content .doc-controls a[class*="btn"],
+.template-default__content .doc-header a[class*="btn"] {
+  display: none !important;
+}
+
+/* Always show Edit/API buttons inside drawers — override all hiding rules */
+.drawer .doc-header__actions,
+[class*="drawer"]:not(body) .doc-header__actions,
+.drawer .doc-header__edit,
+[class*="drawer"]:not(body) .doc-header__edit,
+.drawer .doc-controls__edit,
+[class*="drawer"]:not(body) .doc-controls__edit,
+.drawer .doc-header .btn--style-secondary,
+[class*="drawer"]:not(body) .doc-header .btn--style-secondary,
+.drawer .doc-header a[class*="btn"],
+[class*="drawer"]:not(body) .doc-header a[class*="btn"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+
+/* Adjust page alignment and spacing */
+.template-default__content {
+  padding: 1.5rem 3rem 1.5rem 3rem !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  background: var(--theme-elevation-0) !important;
+}
+
+.collection-edit__main {
+  padding-top: 0 !important;
+}
+
+.doc-controls {
+  margin-bottom: 0.5rem !important;
+  display: none;
+}
+
+/* Show doc-controls when inside a drawer or on create pages */
+.drawer .doc-controls,
+[class*="drawer"]:not(body) .doc-controls,
+body.create-page-active .doc-controls {
+  display: flex !important;
+  margin-bottom: 0 !important;
+}
+
+/* Keep doc-controls visually hidden on create pages (JS clicks it) */
+body.create-page-active .doc-controls {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  pointer-events: none !important;
+}
+.doc-tabs{
+  display: none;
+}
+.doc-controls__controls-wrapper{
+  justify-content: end !important;
+
+}
+
+.document-fields--has-sidebar{
+  max-width: none !important;
+}
+
+.gutter {
+ padding-top: 48 !important;
+  padding-bottom: 38 !important;
+   padding-right: 28px !important;
+  padding-left: 28px !important;
+}
+
+.drawer .gutter,
+[class*="drawer"]:not(body) .gutter,
+.drawer .doc-controls,
+[class*="drawer"]:not(body) .doc-controls {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+.doc-controls .popup__trigger-wrap{
+  display: none;
+}
+
+.field-type {
+  margin-bottom: 1.5rem !important;
+  color: var(--theme-text) !important;
+}
+
+.doc-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* --- Premium Table UI Overrides --- */
+
+
+.list-controls {
+    background: var(--theme-elevation-50) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 4px !important;
+     margin-bottom: 1.5rem !important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 20px !important;
+}
+
+
+
+/* Base Table Container */
+.payload-list__main .table, 
+.table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: var(--theme-elevation-50) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  margin: 1px !important; /* Small margin to prevent clipping */
+  color: var(--theme-text) !important;
+}
+
+/* Table Header */
+.table thead th {
+  background: var(--theme-elevation-100) !important;
+  padding: 1.25rem 1.5rem !important;
+  text-align: left !important;
+  font-weight: 700 !important;
+  color: var(--theme-text) !important;
+  text-transform: uppercase !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.1em !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  border-right: 1px solid var(--theme-elevation-150) !important;
+}
+
+.table thead th:last-child {
+  border-right: none !important;
+}
+
+/* Table Cells */
+.table tbody td {
+  padding: 1rem 1.5rem !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  border-right: 1px solid var(--theme-elevation-150) !important;
+  vertical-align: middle !important;
+  color: var(--theme-text) !important;
+  transition: all 0.2s ease !important;
+  background: transparent !important;
+}
+
+/* Ensure left border for first cell in every row if container doesn't show it */
+.table td:first-child, .table th:first-child {
+  border-left: none !important;
+}
+
+.table tbody td:last-child {
+  border-right: none !important;
+}
+
+/* Row Hover Effect */
+.table tbody tr:hover td {
+  background: rgba(37, 99, 201, 0.04) !important;
+}
+
+/* Remove bottom border for last row to avoid double border with container */
+.table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Corner rounding fix for table */
+.table thead tr:first-child th:first-child {
+  border-top-left-radius: 16px !important;
+}
+
+.table thead tr:first-child th:last-child {
+  border-top-right-radius: 16px !important;
+}
+
+.table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 16px !important;
+}
+
+.table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 16px !important;
+}
+
+/* Styling for specific column types */
+.table__cell--id {
+  font-family: monospace !important;
+  font-size: 0.85rem !important;
+  color: #717784 !important;
+  opacity: 0.8 !important;
+}
+
+/* Fix Image Column Width */
+.table__cell--image,
+.table th[id*="image"],
+.table td[class*="image"] {
+  width: 100px !important;
+  min-width: 100px !important;
+}
+
+/* Custom Table Actions Styling */
+.table .cell-actions,
+.blog-cell-actions {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: start !important; /* Center icons in the column */
+  align-items: start !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  margin: 0 auto !important;
+}
+
+.table th[id*="actions"],
+.table td[class*="actions"] {
+  width: 180px !important;
+  min-width: 180px !important;
+  text-align: left !important;
+}
+
+.table .cell-actions .btn {
+    padding: 6px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important; 
+    border: none !important;
+}
+
+.table .cell-actions .btn:hover {
+    transform: scale(1.1) !important;
+}
+
+
+/* --- Edit/View Mode Styles --- */
+body.view-mode-active .field-type input,
+body.view-mode-active .field-type textarea,
+body.view-mode-active .field-type select,
+body.view-mode-active .field-type button:not(.edit-toggle-btn),
+body.view-mode-active .field-type .rich-text,
+body.view-mode-active .field-type .upload,
+body.view-mode-active .field-type .relationship,
+body.view-mode-active .field-type .array-actions,
+body.view-mode-active .field-type [class*="upload"],
+body.view-mode-active .field-type [class*="btn"],
+body.view-mode-active .field-type [class*="picker"],
+body.view-mode-active .field-type [class*="checkbox"],
+body.view-mode-active .field-type [class*="select"],
+body.view-mode-active .array-field__add-row,
+body.view-mode-active .blocks-field__add-block,
+body.view-mode-active .array-field__row-actions,
+body.view-mode-active .blocks-field__block-actions,
+body.view-mode-active .array-field__drag-handle,
+body.view-mode-active .blocks-field__drag-handle,
+body.view-mode-active .collapsible__drag-handle,
+body.view-mode-active .btn--icon-style-without-bg,
+body.view-mode-active .upload__clear,
+body.view-mode-active .file-field__remove,
+body.view-mode-active button.array-actions__button,
+body.view-mode-active .blog-custom-image-field,
+body.view-mode-active .cuf-root {
+  pointer-events: none !important;
+  opacity: 0.85 !important;
+  user-select: none !important;
+}
+
+
+
+/* Ensure drawer inputs/buttons/fields are always active and not disabled by view-mode-active */
+.drawer,
+[class*="drawer"]:not(body) {
+  pointer-events: auto !important;
+}
+.drawer *,
+[class*="drawer"]:not(body) * {
+  pointer-events: auto !important;
+  user-select: auto !important;
+}
+
+/* view-mode-active should NOT dim/disable buttons inside drawers */
+body.view-mode-active .doc-controls__controls-wrapper:not(.drawer .doc-controls__controls-wrapper):not([class*="drawer"]:not(body) .doc-controls__controls-wrapper) button,
+body.view-mode-active .doc-controls__controls-wrapper:not(.drawer .doc-controls__controls-wrapper):not([class*="drawer"]:not(body) .doc-controls__controls-wrapper) a,
+body.view-mode-active .collection-edit__main button[type="submit"] {
+  pointer-events: none !important;
+  opacity: 0.5 !important;
+}
+
+/* Always keep drawer controls fully active regardless of view-mode */
+body.view-mode-active .drawer .doc-controls__controls-wrapper button,
+body.view-mode-active [class*="drawer"]:not(body) .doc-controls__controls-wrapper button,
+body.view-mode-active .drawer .doc-controls__controls-wrapper a,
+body.view-mode-active [class*="drawer"]:not(body) .doc-controls__controls-wrapper a {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* Hide native Save/Publish buttons in View Mode globally */
+body.view-mode-active button#action-save,
+body.view-mode-active button#action-publish,
+body.view-mode-active button[class*="publish"],
+body.view-mode-active button[class*="save"] {
+  display: none !important;
+}
+
+/* Ensure Custom Header Green Save buttons NEVER show when a drawer is active */
+body.dialog-open-active .edit-toggle-btn.btn-save,
+body.dialog-open-active .edit-cancel-btn {
+  display: none !important;
+}
+
+/* Keep action-save visually hidden but keep it in the layout so JS can click it */
+button#action-save {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Premium Edit Toggle Button */
+.edit-toggle-btn {
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  font-size: 0.75rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 3px 10px rgba(15, 47, 99, 0.2) !important;
+  white-space: nowrap !important;
+  width: max-content !important;
+  height: 32px !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Premium Unified Active Buttons */
+button.btn--style-primary,
+.btn--style-primary,
+button#action-save,
+button[type="submit"],
+.edit-toggle-btn.btn-edit,
+.edit-toggle-btn.btn-create,
+.edit-toggle-btn.btn-save,
+.btn-save,
+.btn-publish {
+  background: var(--brand-green) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 6px 18px !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 3px 10px rgba(93, 156, 69, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 32px !important;
+  white-space: nowrap !important;
+  width: max-content !important;
+}
+
+button.btn--style-primary:hover,
+.btn--style-primary:hover,
+button#action-save:hover,
+button[type="submit"]:hover,
+.edit-toggle-btn:hover,
+.btn-save:hover,
+.btn-publish:hover {
+  background: #0f2f63 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 6px 15px rgba(15, 47, 99, 0.4) !important;
+}
+
+/* Premium Unified Secondary / Cancel / Discard / Back Buttons — theme-aware */
+button.btn--style-secondary,
+.btn--style-secondary,
+.edit-cancel-btn,
+.btn-discard,
+button[class*="discard"],
+button.btn-discard {
+  background: var(--theme-elevation-0) !important;
+  color: var(--brand-green) !important;
+  border: 1px solid var(--brand-green) !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 32px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+button.btn--style-secondary:hover,
+.btn--style-secondary:hover,
+.edit-cancel-btn:hover,
+.btn-discard:hover {
+  background: #0f2f63 !important;
+  border-color: transparent !important;
+  color: white !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(15, 47, 99, 0.35) !important;
+}
+
+/* Dark theme overrides for Secondary / Cancel / Discard buttons inside Drawers, Dialogs, or Sidebar */
+.drawer button.btn--style-secondary,
+[class*="drawer"]:not(body) button.btn--style-secondary,
+.drawer .btn-discard,
+[class*="drawer"]:not(body) .btn-discard,
+.drawer .edit-cancel-btn,
+[class*="drawer"]:not(body) .edit-cancel-btn,
+dialog button.btn--style-secondary,
+[role="dialog"] button.btn--style-secondary,
+dialog .edit-cancel-btn,
+[role="dialog"] .edit-cancel-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: none !important;
+}
+
+.drawer button.btn--style-secondary:hover,
+[class*="drawer"]:not(body) button.btn--style-secondary:hover,
+.drawer .btn-discard:hover,
+[class*="drawer"]:not(body) .btn-discard:hover,
+.drawer .edit-cancel-btn:hover,
+[class*="drawer"]:not(body) .edit-cancel-btn:hover,
+dialog button.btn--style-secondary:hover,
+[role="dialog"] button.btn--style-secondary:hover {
+  background: rgba(37, 99, 201, 0.1) !important;
+  border-color: #2563c9 !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 201, 0.2) !important;
+}
+
+/* --- Premium Sliding Drawer Overrides --- */
+.drawer,
+[class*="drawer"]:not(body) {
+  z-index: 2100 !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Base drawer background and layout */
+.drawer__content,
+[class*="drawer__content"] {
+  background: rgba(18, 18, 18, 0.95) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.7) !important;
+  color: white !important;
+  width: 80% !important;
+  max-width: 1350px !important;
+  min-width: 600px !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  /* Sliding animation from right */
+  animation: slideInFromRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+/* Modern thin scrollbar for drawer content to avoid clunky standard scrollbars */
+.drawer__content::-webkit-scrollbar,
+[class*="drawer__content"]::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+.drawer__content::-webkit-scrollbar-thumb,
+[class*="drawer__content"]::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 4px !important;
+}
+.drawer__content::-webkit-scrollbar-track,
+[class*="drawer__content"]::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Drawer Header and Close button */
+.drawer__header,
+[class*="drawer__header"] {
+  padding: 1rem 1.5rem 1rem 4rem !important; /* Extra left padding to make room for the icon */
+  position: relative !important;
+}
+
+/* Add an image/media icon to the top-left of the drawer header */
+.drawer__header::before,
+[class*="drawer__header"]::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 1.5rem !important; /* Aligned to the left edge */
+  top: 50% !important; /* Vertically centered in the header */
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: var(--brand-green) !important;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'%3E%3C/circle%3E%3Cpolyline points='21 15 16 10 5 21'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center / contain !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'%3E%3C/circle%3E%3Cpolyline points='21 15 16 10 5 21'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center / contain !important;
+}
+
+.drawer__header-close,
+[class*="drawer__header-close"],
+.drawer__close,
+[class*="drawer__close"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 50% !important;
+  color: white !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.drawer__header-close:hover,
+.drawer__close:hover {
+  background: rgba(255, 68, 68, 0.25) !important;
+  border-color: rgba(255, 68, 68, 0.4) !important;
+  color: #ff4444 !important;
+  transform: rotate(90deg) !important;
+}
+
+
+.drawer__content input,
+.drawer__content textarea,
+.drawer__content select,
+[class*="drawer__content"] input,
+[class*="drawer__content"] textarea,
+[class*="drawer__content"] select {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  font-size: 0.85rem !important;
+}
+
+.drawer__content input:focus,
+[class*="drawer__content"] input:focus {
+  border-color: var(--orange-primary) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 201, 0.25) !important;
+}
+
+/* --- Modern General UI Polish --- */
+.app-header {
+  position: sticky !important;
+  top: 0px !important;
+  z-index: 999 !important;
+  background: var(--theme-elevation-0) !important;
+  border-bottom: 1px solid var(--theme-elevation-100) !important;
+}
+
+.step-nav {
+  margin-left: 50px !important;
+}
+
+/* Hide scrollbar on sidebar links area */
+.sidebar-scroll-area {
+  scrollbar-width: none !important;
+}
+.sidebar-scroll-area::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Beautiful custom focus rings on normal form page inputs */
+.collection-edit__main input,
+.collection-edit__main textarea,
+.collection-edit__main select {
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.collection-edit__main input:focus,
+.collection-edit__main textarea:focus {
+  border-color: #2563C9 !important;
+  box-shadow: 0 0 0 3px rgba(93, 156, 69, 0.15) !important;
+}
+
+/* Restore and style the save/submit buttons and actions inside Payload drawers/modals */
+.drawer .doc-header__actions,
+[class*="drawer"]:not(body) .doc-header__actions,
+.drawer .doc-header__actions-wrapper,
+[class*="drawer"]:not(body) .doc-header__actions-wrapper,
+.drawer button#action-save,
+[class*="drawer"]:not(body) button#action-save,
+.drawer button[type="submit"],
+[class*="drawer"]:not(body) button[type="submit"],
+.drawer button[class*="save"],
+[class*="drawer"]:not(body) button[class*="save"],
+.drawer .form-submit button[type="submit"],
+[class*="drawer"]:not(body) .form-submit button[type="submit"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure the drawer save button looks consistent and premium */
+.drawer button#action-save,
+[class*="drawer"]:not(body) button#action-save,
+dialog button#action-save,
+[role="dialog"] button#action-save,
+.drawer button[type="submit"],
+[class*="drawer"]:not(body) button[type="submit"],
+dialog button[type="submit"],
+[role="dialog"] button[type="submit"],
+.drawer button[class*="save"],
+[class*="drawer"]:not(body) button[class*="save"],
+dialog button[class*="save"],
+[role="dialog"] button[class*="save"] {
+  position: static !important;
+  width: auto !important;
+  height: 32px !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
+  clip: auto !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  margin: 0 !important;
+  background: var(--orange-gradient) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 6px 14px !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  cursor: pointer !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 3px 10px rgba(37, 99, 201, 0.2) !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.drawer button#action-save:hover,
+[class*="drawer"]:not(body) button#action-save:hover,
+.drawer button[type="submit"]:hover,
+[class*="drawer"]:not(body) button[type="submit"]:hover,
+.drawer button[class*="save"]:hover,
+[class*="drawer"]:not(body) button[class*="save"]:hover {
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 6px 15px rgba(37, 99, 201, 0.4) !important;
+}
+
+/* Dialog Box UI Premium Polish */
+.drawer .drawer__content,
+[class*="drawer"]:not(body) [class*="content"] {
+  padding: 16px 20px !important;
+}
+
+/* Reduce title sizes inside the drawer and file details cards */
+.drawer h1, .drawer h2, .drawer h3, .drawer h4,
+[class*="drawer"]:not(body) h1, [class*="drawer"]:not(body) h2, [class*="drawer"]:not(body) h3, [class*="drawer"]:not(body) h4,
+.drawer__title, [class*="drawer__title"],
+.drawer__header-title, [class*="drawer__header-title"] {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+
+
+/* Fix icon buttons (like Close X, Copy) so they don't look like giant orange blocks */
+.drawer button.btn--icon,
+[class*="drawer"]:not(body) button.btn--style-icon,
+.drawer button[class*="close"],
+[class*="drawer"]:not(body) button[class*="close"],
+.drawer button.copy-to-clipboard,
+[class*="drawer"]:not(body) button[class*="copy"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  color: #ccc !important;
+  transition: all 0.2s ease !important;
+}
+
+
+
+/* Ensure all interactive elements inside drawer are always clickable and fully visible */
+.drawer,
+[class*="drawer"]:not(body) {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  box-shadow: -12px 0 20px -15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.drawer button,
+.drawer input,
+.drawer select,
+.drawer textarea,
+[class*="drawer"]:not(body) button,
+[class*="drawer"]:not(body) input,
+[class*="drawer"]:not(body) select,
+[class*="drawer"]:not(body) textarea {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* Hide Step Navigation (ugly breadcrumb bars) inside Drawers/Sliders */
+.drawer .step-nav,
+[class*="drawer"]:not(body) .step-nav,
+.drawer [class*="step-nav"],
+[class*="drawer"]:not(body) [class*="step-nav"] {
+  display: none !important;
+}
+
+/* Modern File Uploader Drag & Drop Zone */
+.file-field__drag,
+.drop-zone {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 2px dashed rgba(37, 99, 201, 0.2) !important;
+  border-radius: 16px !important;
+  color: var(--theme-text) !important;
+  padding: 2.5rem 1.5rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  text-align: center !important;
+  margin: 0.5rem auto !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  box-shadow: inset 0 0 12px rgba(37, 99, 201, 0.01) !important;
+}
+
+.file-field__drag:hover,
+.drop-zone:hover {
+  background: rgba(37, 99, 201, 0.04) !important;
+  border-color: var(--orange-primary) !important;
+  box-shadow: inset 0 0 20px rgba(37, 99, 201, 0.06), 0 6px 20px rgba(37, 99, 201, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Glassmorphism File Details Card (Existing Media Preview) */
+.file-details,
+.file-field__file-details,
+.file-field__details,
+[class*="file-details"],
+[class*="file-field__details"] {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  margin: 12px 0 !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Ensure inner uploader actions are centered */
+.file-field__drag-inner,
+.file-field__upload-actions,
+.file-field__upload-actions-wrapper,
+[class*="upload-actions"] {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+/* Parent container reset to prevent nested boxes */
+.file-field {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Style file uploader action buttons to use Unified pill design */
+.file-field button,
+.drop-zone button,
+.file-field__upload-button,
+.file-field__edit,
+.file-field__remove,
+.file-field button.copy-to-clipboard,
+.drawer button.copy-to-clipboard {
+  background: var(--orange-gradient) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 32px !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
+}
+
+.file-field button:hover,
+.drop-zone button:hover,
+[class*="drop-zone"] button:hover,
+.file-field__upload-button:hover,
+.file-field__edit:hover,
+.file-field__remove:hover,
+.file-field button.copy-to-clipboard:hover {
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 201, 0.35) !important;
+}
+
+/* Remove unwanted spaces from uploader cards and details */
+.file-field,
+.file-field__drag,
+.drop-zone,
+.file-details,
+.file-field__file-details,
+[class*="file-details"] {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* Premium Image Preview card inside uploader details */
+.file-details__preview,
+[class*="file-details__preview"],
+.file-field__preview,
+[class*="file-field__preview"] {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  padding: 8px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  max-height: 140px !important;
+  width: auto !important;
+  margin: 0 auto 6px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.file-details__preview img,
+.file-field__preview img,
+.file-details img,
+.file-field img {
+  max-height: 124px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  border-radius: 6px !important;
+}
+
+/* Premium Back Button Style — positioned fixed in header content area */
+.btn-back,
+a.btn-back {
+  position: fixed !important;
+  top: 1.35rem !important;
+  left: 290px !important;
+  z-index: 2000 !important;
+  background: var(--theme-elevation-0) !important;
+  color: #0F2F63 !important;
+  border: 1px solid rgba(37, 99, 201, 0.3) !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  height: 32px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  text-decoration: none !important;
+}
+
+.btn-back:hover,
+a.btn-back:hover {
+  background: var(--orange-gradient) !important;
+  border-color: transparent !important;
+  color: white !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 201, 0.35) !important;
+}
+
+.doc-controls__label{
+    color: white;
+    white-space: nowrap;
+    margin: 0;
+    display: none;
+}
+
+.doc-controls__value{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+    font-weight: 600;
+    line-height: 24px;
+    overflow: hidden;
+    display: none;
+}
+.doc-controls__content{
+  display: none !important;
+}
+
+/* ===== PREMIUM RELATIONSHIP / SELECT FIELD REDESIGN ===== */
+
+/* --- Relationship Field Container --- */
+.field-type.relationship,
+.field-type[class*="relationship"] {
+  position: relative !important;
+}
+
+/* --- Select / Relationship Input Wrapper --- */
+.relationship .rs__control,
+.field-type.relationship .rs__control,
+[class*="relationship"] .rs__control,
+.field-type.select .rs__control,
+.rs__control {
+  background: var(--theme-input-bg, var(--theme-elevation-50)) !important;
+  border: 1.5px solid var(--theme-elevation-200) !important;
+  border-radius: 14px !important;
+  min-height: 46px !important;
+  padding: 2px 8px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  cursor: pointer !important;
+}
+
+.rs__control:hover {
+  border-color: rgba(37, 99, 201, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 201, 0.08) !important;
+}
+
+.rs__control--is-focused,
+.rs__control:focus-within {
+  border-color: var(--orange-primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 201, 0.12), 0 4px 16px rgba(37, 99, 201, 0.1) !important;
+}
+
+/* --- Selected Value Display --- */
+.rs__single-value {
+  color: var(--theme-text) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.01em !important;
+}
+
+.rs__value-container {
+  padding: 4px 8px !important;
+}
+
+/* --- Search Input inside Select --- */
+.rs__input-container,
+.rs__input-container input {
+  color: var(--theme-text) !important;
+  font-size: 0.9rem !important;
+}
+
+/* --- Placeholder Text --- */
+.rs__placeholder {
+  color: var(--theme-elevation-400) !important;
+  font-size: 0.88rem !important;
+  opacity: 0.65 !important;
+}
+
+/* --- Dropdown Arrow / Indicator --- */
+.rs__indicator-separator {
+  display: none !important;
+}
+
+.rs__dropdown-indicator {
+  color: var(--theme-elevation-400) !important;
+  padding: 6px !important;
+  transition: all 0.25s ease !important;
+}
+
+.rs__dropdown-indicator:hover {
+  color: var(--orange-primary) !important;
+}
+
+.rs__control--menu-is-open .rs__dropdown-indicator {
+  color: var(--orange-primary) !important;
+  transform: rotate(180deg) !important;
+}
+
+/* --- Clear (X) Button --- */
+.rs__clear-indicator {
+  color: var(--theme-elevation-400) !important;
+  padding: 4px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border-radius: 50% !important;
+}
+
+.rs__clear-indicator:hover {
+  color: #ff4444 !important;
+  background: rgba(255, 68, 68, 0.1) !important;
+}
+
+/* ===== PREMIUM DROPDOWN MENU ===== */
+.rs__menu {
+  background: var(--theme-elevation-50) !important;
+  border: 1.5px solid var(--theme-elevation-200) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+  margin-top: 6px !important;
+  padding: 6px !important;
+  z-index: 9999 !important;
+  animation: dropdownSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  backdrop-filter: blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.rs__menu-list {
+  padding: 0 !important;
+  max-height: 280px !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(37, 99, 201, 0.25) transparent !important;
+}
+
+.rs__menu-list::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.rs__menu-list::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 201, 0.25) !important;
+  border-radius: 10px !important;
+}
+
+.rs__menu-list::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+/* --- Dropdown Option Items --- */
+.rs__option {
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  margin: 2px 0 !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  color: var(--theme-text) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  background: transparent !important;
+}
+
+.rs__option:hover,
+.rs__option--is-focused {
+  background: rgba(37, 99, 201, 0.08) !important;
+  color: var(--orange-primary) !important;
+  padding-left: 18px !important;
+}
+
+.rs__option--is-selected {
+  background: linear-gradient(135deg, rgba(250, 173, 3, 0.15) 0%, rgba(250, 173, 3, 0.1) 100%) !important;
+  color: var(--orange-primary) !important;
+  font-weight: 600 !important;
+  position: relative !important;
+}
+
+.rs__option--is-selected::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 3px !important;
+  height: 60% !important;
+  background: var(--orange-gradient) !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+/* --- No Options Message --- */
+.rs__menu-notice--no-options {
+  color: var(--theme-elevation-400) !important;
+  font-size: 0.85rem !important;
+  padding: 16px !important;
+  text-align: center !important;
+}
+
+/* --- Loading Message --- */
+.rs__menu-notice--loading,
+.rs__loading-indicator {
+  color: var(--orange-primary) !important;
+}
+
+/* ===== PREMIUM "+" ADD NEW BUTTON ===== */
+.relationship-add-new,
+.relationship__add-new,
+.relationship__relation-button,
+.relationship__add-button,
+[class*="relationship-add-new"],
+button[class*="add-new"],
+a[class*="add-new"] {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  border-radius: 12px !important;
+  background: #2563C9 !important;
+  color: white !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 201, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+.relationship-add-new::after,
+.relationship__add-new::after,
+.relationship__relation-button::after,
+.relationship__add-button::after,
+[class*="relationship-add-new"]::after,
+button[class*="add-new"]::after,
+a[class*="add-new"]::after {
+  content: "+" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  color: white !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.relationship-add-new::before,
+.relationship__add-new::before,
+[class*="relationship-add-new"]::before,
+button[class*="add-new"]::before,
+a[class*="add-new"]::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%) !important;
+  border-radius: inherit !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.relationship-add-new:hover,
+.relationship__add-new:hover,
+.relationship__relation-button:hover,
+.relationship__add-button:hover,
+[class*="relationship-add-new"]:hover,
+button[class*="add-new"]:hover,
+a[class*="add-new"]:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 201, 0.45) !important;
+}
+
+.relationship-add-new:hover::before,
+.relationship__add-new:hover::before,
+[class*="relationship-add-new"]:hover::before,
+button[class*="add-new"]:hover::before,
+a[class*="add-new"]:hover::before {
+  opacity: 1 !important;
+}
+
+.relationship-add-new:active,
+.relationship__add-new:active,
+[class*="relationship-add-new"]:active,
+button[class*="add-new"]:active,
+a[class*="add-new"]:active {
+  transform: translateY(0) scale(0.97) !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 201, 0.3) !important;
+}
+
+/* + Button Icon */
+.relationship-add-new svg,
+.relationship__add-new svg,
+.relationship__relation-button svg,
+.relationship__add-button svg,
+[class*="relationship-add-new"] svg,
+button[class*="add-new"] svg,
+a[class*="add-new"] svg {
+  fill: white !important;
+  stroke: white !important;
+  color: white !important;
+  width: 18px !important;
+  height: 18px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.relationship-add-new:hover svg,
+.relationship__add-new:hover svg,
+[class*="relationship-add-new"]:hover svg,
+button[class*="add-new"]:hover svg,
+a[class*="add-new"]:hover svg {
+  transform: rotate(90deg) !important;
+}
+
+/* ===== RELATIONSHIP FIELD — FLEX LAYOUT (Select + Plus Button) ===== */
+.field-type.relationship .field-type__wrap,
+.field-type[class*="relationship"] .field-type__wrap {
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 10px !important;
+}
+
+.field-type.relationship .field-type__wrap > .rs__container,
+.field-type[class*="relationship"] .field-type__wrap > .rs__container,
+.field-type.relationship .rs__container,
+.field-type[class*="relationship"] .rs__container {
+  flex: 1 !important;
+}
+
+/* ===== MULTI-VALUE (hasMany) TAGS ===== */
+.rs__multi-value {
+  background: linear-gradient(135deg, rgba(250, 173, 3, 0.12) 0%, rgba(250, 173, 3, 0.08) 100%) !important;
+  border: 1px solid rgba(37, 99, 201, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 1px 2px !important;
+  margin: 2px !important;
+}
+
+.rs__multi-value__label {
+  color: var(--orange-primary) !important;
+  font-weight: 500 !important;
+  font-size: 0.82rem !important;
+  padding: 2px 6px !important;
+}
+
+.rs__multi-value__remove {
+  color: var(--orange-primary) !important;
+  border-radius: 0 6px 6px 0 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.rs__multi-value__remove:hover {
+  background: rgba(255, 68, 68, 0.15) !important;
+  color: #ff4444 !important;
+}
+
+/* ===== SELECT FIELD (non-relationship) — Same Premium Style ===== */
+.field-type.select .rs__control {
+  background: var(--theme-input-bg, var(--theme-elevation-50)) !important;
+  border: 1.5px solid var(--theme-elevation-200) !important;
+  border-radius: 14px !important;
+  min-height: 46px !important;
+}
+
+/* ===== MEDIA COLLECTION — NO DRAWER, DIRECT NAVIGATION ===== */
+/* Instantly hide any media drawer that tries to open while on media list page */
+body.media-list-active .drawer,
+body.media-list-active [class*="drawer"]:not(body),
+body.media-list-active dialog,
+body.media-list-active [role="dialog"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Make media table rows look clickable like links */
+body[class*="media"] .table tbody tr,
+.collection-list--media .table tbody tr {
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+body[class*="media"] .table tbody tr:hover td,
+.collection-list--media .table tbody tr:hover td {
+  background: rgba(37, 99, 201, 0.06) !important;
+}
+
+#nav-toggler{
+  display: none !important;
+}
+/* ===== MEDIA CREATE / EDIT PAGE — MATCH REFERENCE DESIGN ===== */
+.collection-edit__main .upload__upload,
+.collection-edit__main .file-field__drag,
+.collection-edit__main .drop-zone {
+  background: var(--theme-elevation-50) !important;
+  border: 2px dashed rgba(37, 99, 201, 0.35) !important;
+  border-radius: 16px !important;
+  min-height: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  flex-direction: row !important;
+  padding: 1.5rem 2rem !important;
+  transition: all 0.25s ease !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.collection-edit__main .file-field__drag:hover,
+.collection-edit__main .drop-zone:hover {
+  background: rgba(37, 99, 201, 0.04) !important;
+  border-color: var(--orange-primary) !important;
+}
+
+/* Media page — ensure form fields have clean styling */
+.collection-edit__main .field-type.text .field-type__wrap,
+.collection-edit__main .field-type.text {
+  max-width: 100% !important;
+}
+
+
+.drawer__blur-bg-content{
+  display: none !important;
+}
+
+.localizer-button {
+    white-space: nowrap;
+    background-color: var(--theme-elevation-50) !important;
+    border-radius: var(--style-radius-s);
+    align-items: center;
+    padding-inline: 20px 20px;
+    padding: 5px 5px !important;
+    display: flex;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* .localizer-button {
+    transition: all 1.3s ease !important;
+} */
+
+
+.localizer-button:hover {
+    background-color: #dfe3e8 !important;
+    color: black;
+    cursor: pointer;
+}
+
+.upload-relationship-details__actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* --- Custom Upload Field Styles --- */
+html body #cuf-root-id svg,
+html body #cuf-drawer-container svg,
+html body #cuf-drawer-container svg path,
+html body #cuf-drawer-container svg circle {
+  color: inherit !important;
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+html body input[type="file"].cuf-real-hidden-input {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  pointer-events: none !important;
+}
+
+.cuf-root {
+  font-family: var(--font-body, inherit);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Empty State */
+.cuf-empty {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--theme-elevation-50); border: 2px dashed var(--theme-elevation-200);
+  border-radius: 12px; padding: 1.25rem 1.5rem;
+  cursor: pointer; transition: all 0.2s ease;
+}
+
+.cuf-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f1f1;
+  background: #fff;
+}
+
+.cuf-drawer__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cuf-drawer__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cuf-drawer__subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.cuf-drawer__close {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cuf-drawer__close:hover {
+  background: #0F2F63;
+  color: #fff;
+  transform: rotate(90deg);
+  box-shadow: 0 6px 16px rgba(37, 99, 201, 0.25);
+}
+
+.cuf-empty:hover {
+  border-color: var(--orange-primary, #0F2F63); background: var(--theme-elevation-100);
+}
+
+.cuf-empty__icon {
+  color: var(--theme-elevation-400); display: flex; align-items: center;
+}
+
+.cuf-empty:hover .cuf-empty__icon { color: var(--orange-primary, #0F2F63); }
+.cuf-empty__content { flex: 1; display: flex; flex-direction: column; }
+.cuf-empty__title { font-weight: 700; color: var(--theme-text); font-size: 0.95rem; }
+.cuf-empty__subtitle { font-size: 0.8rem; color: var(--theme-elevation-500); }
+
+.cuf-empty__action {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--theme-elevation-0); border: 1px solid var(--theme-elevation-150);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--theme-elevation-500); transition: all 0.2s ease;
+}
+
+.cuf-empty:hover .cuf-empty__action {
+  background: var(--orange-gradient, #0F2F63); color: white; border-color: transparent;
+  transform: scale(1.05);
+}
+
+/* Selected Card */
+.cuf-card {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--theme-elevation-0); border: 1px solid var(--theme-elevation-150);
+  border-radius: 12px; padding: 0.75rem;
+}
+
+.cuf-card__thumb {
+  width: 80px; height: 80px; border-radius: 8px; overflow: hidden;
+  background: var(--theme-elevation-50); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.cuf-card__media { width: 100%; height: 100%; object-fit: cover; }
+.cuf-card__placeholder { color: var(--theme-elevation-400); }
+.cuf-card__body { flex: 1; min-width: 0; }
+
+.cuf-card__filename {
+  margin: 0 0 0.25rem 0; font-size: 0.9rem; font-weight: 700; color: var(--theme-text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.cuf-card__meta {
+  display: flex; gap: 0.75rem; font-size: 0.75rem; color: var(--theme-elevation-500); font-weight: 500;
+}
+
+.cuf-card__actions { display: flex; gap: 0.5rem; padding-right: 0.5rem; }
+
+/* Icon Buttons */
+.cuf-icon-btn {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--theme-elevation-150) !important; 
+  background: var(--theme-elevation-50) !important; 
+  color: var(--theme-text) !important;
+  cursor: pointer; transition: all 0.2s;
+}
+
+#cuf-root-id .cuf-icon-btn svg, #cuf-root-id .cuf-empty__action svg {
+  color: inherit !important; stroke: currentColor !important;
+}
+
+.cuf-icon-btn:hover { background: var(--orange-gradient, #0F2F63) !important; border-color: transparent !important; }
+
+html body #cuf-root-id .cuf-icon-btn:hover svg,
+html body #cuf-root-id .cuf-icon-btn:hover svg path {
+  color: white !important; stroke: white !important; fill: none !important;
+}
+
+.cuf-icon-btn--delete { background: var(--theme-error-100, #ffebe9) !important; border-color: var(--theme-error-200, #ffc1bd) !important; color: var(--theme-error-500, #ff3b30) !important; }
+.cuf-icon-btn--delete:hover { background: var(--theme-error-500, #ff3b30) !important; border-color: var(--theme-error-500, #ff3b30) !important; color: white !important; }
+html body #cuf-root-id .cuf-icon-btn--delete:hover svg { color: white !important; stroke: white !important; }
+
+/* Overlay Layout Blur Functionality */
+.cuf-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+
+.cuf-overlay--visible { opacity: 1; pointer-events: auto; }
+
+/* Modern Sidebar Design */
+.cuf-drawer {
+  position: fixed; top: 0; right: 0; width: 480px; max-width: 100vw; height: 100vh;
+  background: white; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--theme-text);
+}
+
+.cuf-drawer--open { transform: translateX(0); }
+.cuf-drawer__title { font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--theme-text); }
+.cuf-drawer__subtitle { font-size: 0.8rem; color: var(--theme-elevation-500); margin: 2px 0 0; }
+
+.cuf-drawer__close {
+  width: 32px; height: 32px; border-radius: 8px; background: transparent;
+  border: 1px solid var(--theme-elevation-200); color: var(--theme-elevation-500); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+}
+
+.cuf-drawer__close:hover { background: var(--theme-elevation-200); color: var(--theme-text); }
+.cuf-drawer__body { flex: 1; overflow-y: auto; padding: 1.5rem; }
+
+.cuf-drawer__footer {
+  padding: 1rem 1.5rem; border-top: 1px solid var(--theme-elevation-200);
+  display: flex; gap: 0.75rem; background: var(--theme-elevation-0, #fff);
+}
+
+/* Buttons styles */
+.cuf-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.65rem 1.25rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+  border: none; cursor: pointer; transition: all 0.2s;
+}
+
+.cuf-btn--primary { background: var(--brand-green, #2563c9); color: white; flex: 1; }
+.cuf-btn--primary:hover { background: var(--orange-gradient, #0F2F63); transform: translateY(-1px); }
+.cuf-btn--ghost { background: transparent; color: var(--theme-elevation-600); border: 1px solid var(--theme-elevation-300); }
+.cuf-btn--ghost:hover { background: var(--theme-elevation-200); color: var(--theme-text); }
+.cuf-btn--danger { background: transparent; color: var(--theme-error-500, #ff3b30); border: 1px solid var(--theme-error-200); }
+.cuf-btn--danger:hover { background: var(--theme-error-100); }
+
+/* Panels structure */
+.cuf-editor { display: flex; flex-direction: column; gap: 1.5rem; }
+.cuf-section__title { font-size: 0.8rem; font-weight: 700; color: var(--theme-elevation-500); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 0.75rem; }
+
+.cuf-upload-box {
+  background: var(--theme-elevation-0, #fff); border: 1px solid var(--theme-elevation-200); border-radius: 12px; padding: 1.25rem;
+}
+
+.cuf-field { margin-bottom: 1.25rem; }
+.cuf-field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--theme-text); margin-bottom: 0.5rem; }
+
+.cuf-field input {
+  width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--theme-elevation-300); border-radius: 6px;
+  background: var(--theme-elevation-50); color: var(--theme-text); font-size: 0.85rem;
+}
+
+.cuf-field input:focus { outline: none; border-color: var(--orange-primary, #0F2F63); }
+
+.cuf-btn--upload-massive {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; padding: 2rem 1rem; background: var(--theme-elevation-50); border: 2px dashed var(--theme-elevation-300);
+  border-radius: 10px; color: var(--theme-elevation-500); cursor: pointer; transition: all 0.2s;
+}
+
+.cuf-btn--upload-massive-content {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; pointer-events: none;
+}
+
+.cuf-btn--upload-massive:hover { border-color: var(--orange-primary, #0F2F63); color: var(--theme-text); background: var(--theme-elevation-100); }
+.cuf-btn--upload-massive span { font-weight: 600; font-size: 0.9rem; }
+
+.cuf-divider { display: flex; align-items: center; text-align: center; margin: 1.25rem 0; color: var(--theme-elevation-400); font-size: 0.75rem; font-weight: 600; }
+.cuf-divider::before, .cuf-divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--theme-elevation-200); }
+.cuf-divider span { padding: 0 0.75rem; }
+
+.cuf-btn--library-massive {
+  width: 100%; background: var(--theme-elevation-50); color: var(--theme-text);
+  padding: 0.75rem; border-radius: 10px; font-size: 0.9rem; border: 1px solid var(--theme-elevation-300);
+}
+
+.cuf-btn--library-massive:hover { background: var(--theme-elevation-200); }
+
+/* Previews and Media Elements */
+.cuf-preview {
+  background: var(--theme-elevation-0, #fff); border: 1px solid var(--theme-elevation-200); border-radius: 12px; overflow: hidden;
+}
+
+.cuf-preview__thumb {
+  height: 180px; background: var(--theme-elevation-50); display: flex; align-items: center; justify-content: center;
+}
+
+.cuf-preview__media { width: 100%; height: 100%; object-fit: contain; }
+.cuf-preview__placeholder { color: var(--theme-elevation-400); }
+.cuf-preview__info { padding: 1rem; }
+.cuf-preview__filename { margin: 0 0 0.75rem; font-weight: 600; color: var(--theme-text); font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Media Library Configuration */
+.cuf-lib { display: flex; flex-direction: column; gap: 1rem; }
+.cuf-lib__header { display: flex; align-items: center; justify-content: space-between; }
+.cuf-lib__back { background: none; border: none; color: var(--brand-green, #2563c9); font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; }
+.cuf-lib__back:hover { color: var(--orange-primary, #0F2F63); }
+.cuf-lib__title { margin: 0; font-size: 1rem; font-weight: 700; color: var(--theme-text); }
+
+.cuf-lib__search { position: relative; }
+.cuf-lib__search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--theme-elevation-400); }
+.cuf-lib__search input { width: 100%; padding: 0.55rem 1rem 0.55rem 2.2rem; border: 1px solid var(--theme-elevation-300); border-radius: 6px; background: var(--theme-elevation-0, #fff); color: var(--theme-text); font-size: 0.85rem; }
+.cuf-lib__search input:focus { border-color: var(--orange-primary, #0F2F63); outline: none; }
+
+.cuf-lib__loading, .cuf-lib__empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 3rem 1rem; color: var(--theme-elevation-500); font-size: 0.85rem; }
+
+.cuf-lib__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; max-height: calc(100vh - 200px); overflow-y: auto; padding-right: 2px; }
+
+.cuf-lib__item {
+  aspect-ratio: 1; border-radius: 6px; overflow: hidden; background: var(--theme-elevation-0, #fff);
+  border: 2px solid transparent; cursor: pointer; position: relative; padding: 0;
+  display: flex; flex-direction: column; transition: all 0.15s ease;
+}
+
+.cuf-lib__item:hover { border-color: var(--brand-green, #2563c9); }
+.cuf-lib__item--selected { border-color: var(--orange-primary, #0F2F63); }
+.cuf-lib__item-check { position: absolute; top: 4px; right: 4px; color: var(--orange-primary, #0F2F63); background: white; border-radius: 50%; display: flex; z-index: 2; }
+.cuf-lib__item-media { width: 100%; flex: 1; object-fit: cover; min-height: 0; }
+.cuf-lib__item-placeholder { flex: 1; display: flex; align-items: center; justify-content: center; color: var(--theme-elevation-400); }
+.cuf-lib__item-label { font-size: 0.65rem; font-weight: 500; padding: 4px; background: var(--theme-elevation-50); color: var(--theme-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-top: 1px solid var(--theme-elevation-200); width: 100%; box-sizing: border-box; }
+
+.cuf-spin { animation: cuf-spin 0.8s linear infinite; }
+@keyframes cuf-spin { 100% { transform: rotate(360deg); } }
+
+.app-header__localizer {
+    margin-left: auto !important;
+    padding-right: 0 !important;
+    right: 10 !important;
+}
+
+/* ===== FILTERS / WHERE BUILDER LAYOUT ===== */
+
+/* Make the filter section and where-builder container use full width */
+.list-controls,
+.list-controls__wrap,
+.filter,
+.filter__wrap,
+.where-builder {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Expand the condition row to align horizontally with full width */
+.where-builder__conditions,
+.condition,
+.condition-row,
+.filter-controls,
+.condition__wrap {
+  display: flex !important;
+  width: 100% !important;
+  align-items: center !important;
+  gap: 16px !important; 
+  margin-bottom: 12px !important;
+  flex-wrap: nowrap !important;
+  margin-top: 12px !important;
+}
+
+/* Ensure the fields wrapper flexes properly */
+.condition__fields {
+  display: flex !important;
+  flex: 1 !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* Field selector and Operator selector */
+.condition__field,
+.condition__operator {
+  flex: 1 !important;
+  min-width: 150px !important;
+}
+
+/* Increase the width of the value input field */
+.condition__value {
+  flex: 2.5 !important;
+  min-width: 250px !important;
+}
+
+/* Make sure the input tag itself stretches */
+.condition__value input {
+  width: 100% !important;
+}
+
+/* Action buttons container */
+.condition__actions {
+  display: flex !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Change all "+" icons inside filter action buttons to pure white (#FFFFFF) for better visibility */
+.condition__actions button svg,
+.condition__actions button svg path,
+.condition__actions .btn__icon svg,
+.condition__actions .btn__icon svg path {
+  fill: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+/* ===== NO FILTERS EMPTY STATE ===== */
+
+/* Full width filter container */
+.list-controls__where,
+.where-builder {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Make the empty state stretch full width and align with the rest of the layout */
+.where-builder__no-filters {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important; /* Balanced equal margins above and below the card */
+    padding: 24px 32px !important; /* Balanced padding inside the card */
+    box-sizing: border-box !important;
+    
+    /* Premium card style */
+    background: var(--theme-elevation-50) !important;
+    /* border: 1px solid var(--theme-elevation-150) !important; */
+    border-radius: 16px !important;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important; */
+}
+
+/* Force strip any hidden top margin from the first element (the 'No filters set' text) */
+.where-builder__no-filters > :first-child {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    padding-top: 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 500 !important;
+    color: var(--theme-text) !important;
+}
+
+/* Force strip any hidden bottom margin from the last element (the 'Add Filter' button) */
+.where-builder__no-filters > :last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Make sure the plus icon inside the Add Filter button is pure white */
+.where-builder__add-first-filter .btn__icon svg,
+.where-builder__add-first-filter .btn__icon svg path,
+.where-builder__add-first-filter svg.icon--plus,
+.where-builder__add-first-filter svg.icon--plus path,
+.btn__icon svg,
+.btn__icon svg path,
+.icon.icon--plus {
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+.list-controls__where {
+    margin: 0 !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+.where-builder {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.list-controls {
+  margin-bottom: 16px !important;
+}
+
+
+
+.list-controls__where {
+  padding: 8px !important;
+  margin: 0 !important;
+  min-height: auto !important;
+}
+
+.where-builder__no-filters {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 20px !important;
+}
+
+.where-builder__add-first-filter {
+  margin: 0 auto !important;
+}
+
+.where-builder__label {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+
+/* Hide the 'Filter [Collection] where' text */
+.where-builder > .where-builder__label {
+  display: none !important;
+}
+
+/* Fix All Modals Z-Index and Button Colors */
+dialog, [class*="modal"] {
+  z-index: 100000 !important;
+}
+dialog::backdrop, .modal__overlay, [class*="overlay"] {
+  z-index: 99999 !important;
+}
+dialog button.btn--style-secondary, .modal button.btn--style-secondary, [class*="modal"] button.btn--style-secondary {
+  background-color: var(--theme-elevation-150) !important;
+  color: var(--theme-text) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
+}
+dialog button.btn--style-secondary:hover, .modal button.btn--style-secondary:hover, [class*="modal"] button.btn--style-secondary:hover {
+  background-color: var(--theme-elevation-200) !important;
+  color: var(--theme-text) !important;
+}
+
+/* --- Custom Create New Button Styling --- */
+/* Target the Create New button above the table using its href and position */
+.collection-list__header a[href*="/create"],
+.view-controls a[href*="/create"],
+a.btn--style-primary[href*="/create"],
+.payload-list__header a.btn,
+.template-default__content header .btn--style-primary,
+.payload-list header .btn--style-primary,
+a[href*="/create"].btn,
+button[href*="/create"].btn {
+  background: transparent !important;
+  color: #0F2F63 !important;
+  border: 1px solid #0F2F63 !important;
+  border-radius: 20px !important;
+  padding: 8px 24px !important;
+  font-weight: 800 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.5px !important;
+  /* text-transform: uppercase !important; */
+  box-shadow: 0 4px 5px rgba(247, 246, 246, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 36px !important;
+}
+
+.collection-list__header a[href*="/create"]:hover,
+.view-controls a[href*="/create"]:hover,
+a.btn--style-primary[href*="/create"]:hover,
+.payload-list__header a.btn:hover,
+.template-default__content header .btn--style-primary:hover,
+.payload-list header .btn--style-primary:hover,
+a[href*="/create"].btn:hover,
+button[href*="/create"].btn:hover {
+  transform: translateY(-2px) !important;
+  /* box-shadow: 0 6px 20px rgba(250, 173, 3, 0.6) !important; */
+  background: #0F2F63 !important;
+  color:white !important;
+} 
+
+/* Add Plus icon to the Create New button */
+.collection-list__header a[href*="/create"]::before,
+.view-controls a[href*="/create"]::before,
+a.btn--style-primary[href*="/create"]::before,
+.payload-list__header a.btn::before,
+.template-default__content header .btn--style-primary::before,
+.payload-list header .btn--style-primary::before,
+a[href*="/create"].btn::before,
+button[href*="/create"].btn::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.collection-edit__auth {
+  
+    margin-top: 32px;
+
+
+
+
+}
+
+/* Unauthenticated Pages Split Layout (Login / Create First User) */
+body:not(:has(.custom-sidebar)) {
+  display: flex !important;
+  flex-direction: row !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+}
+
+body:not(:has(.custom-sidebar))::before {
+  content: '' !important;
+  flex: 1 !important;
+  background: url('/login-bg.png') no-repeat center center !important;
+  background-size: cover !important;
+  display: block !important;
+}
+
+body:not(:has(.custom-sidebar)) > div:has(form),
+body:not(:has(.custom-sidebar)) > main:has(form),
+body:not(:has(.custom-sidebar)) > section:has(form) {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3rem !important;
+  background: #f5f7fa !important; /* Soft light gray for the right side */
+}
+
+/* Remove the nested box completely for a seamless look, or make the container seamless */
+body:not(:has(.custom-sidebar)) form {
+  width: 100% !important;
+  max-width: 420px !important;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  animation: fadeIn 0.8s ease-out;
+  margin-bottom: 1.5rem;
+}
+
+body:not(:has(.custom-sidebar)) form h1, 
+body:not(:has(.custom-sidebar)) form h2,
+body:not(:has(.custom-sidebar)) form p {
+  text-align: center;
+  color: #111;
+}
+
+body:not(:has(.custom-sidebar)) a[href^="/admin/login"] {
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  color: var(--brand-green);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+body:not(:has(.custom-sidebar)) a[href^="/admin/login"]:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  body:not(:has(.custom-sidebar))::before {
+    display: none !important;
+  }
+}
